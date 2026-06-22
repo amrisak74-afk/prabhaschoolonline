@@ -92,6 +92,31 @@ backToTop.addEventListener("click", () => {
   window.scrollTo({ top: 0, behavior: "smooth" });
 });
 
+// Photo slideshow
+const slideshowEl = document.getElementById("mainSlideshow");
+if (slideshowEl) {
+  const dots = document.querySelectorAll(".slide-dot");
+  let current = 0;
+  let timer;
+  const total = slideshowEl.querySelectorAll(".slide").length;
+
+  function goTo(n) {
+    current = (n + total) % total;
+    slideshowEl.style.transform = `translateX(-${current * 100}%)`;
+    dots.forEach((d, i) => d.classList.toggle("active", i === current));
+  }
+
+  function startTimer() {
+    clearInterval(timer);
+    timer = setInterval(() => goTo(current + 1), 4500);
+  }
+
+  document.querySelector(".slide-next").addEventListener("click", () => { goTo(current + 1); startTimer(); });
+  document.querySelector(".slide-prev").addEventListener("click", () => { goTo(current - 1); startTimer(); });
+  dots.forEach(d => d.addEventListener("click", () => { goTo(+d.dataset.index); startTimer(); }));
+  startTimer();
+}
+
 const enquiryForm = document.querySelector(".enquiry-form");
 
 if (enquiryForm) {
