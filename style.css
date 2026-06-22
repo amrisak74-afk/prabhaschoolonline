@@ -746,6 +746,105 @@ a { color: inherit; text-decoration: none; }
 }
 .admission-banner p { color: rgba(255,255,255,0.82); max-width: 600px; }
 
+/* ── TOPPERS ─────────────────────────────────────────────────────── */
+.toppers-section {
+  padding: 80px 0;
+}
+.toppers-header {
+  text-align: center;
+  margin-bottom: 40px;
+}
+.toppers-header h2 {
+  font-family: "Playfair Display", Georgia, serif;
+  font-size: clamp(2rem, 4vw, 3rem);
+  color: var(--blue);
+  margin: 8px 0 12px;
+}
+.toppers-header p { color: var(--muted); font-size: 1.1rem; }
+
+.topper-filters {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-bottom: 36px;
+}
+.tf-btn {
+  padding: 8px 22px;
+  border-radius: 50px;
+  border: 2px solid var(--border);
+  background: var(--white);
+  color: var(--ink);
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+.tf-btn:hover { border-color: var(--blue); color: var(--blue); }
+.tf-btn.active { background: var(--blue); color: var(--white); border-color: var(--blue); }
+
+.topper-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+  gap: 20px;
+}
+.topper-card {
+  background: var(--white);
+  border-radius: var(--radius-sm);
+  box-shadow: var(--shadow-sm);
+  overflow: hidden;
+  text-align: center;
+  transition: transform 0.25s, box-shadow 0.25s;
+  position: relative;
+}
+.topper-card:hover { transform: translateY(-4px); box-shadow: var(--shadow); }
+.topper-card img {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  object-position: top;
+  display: block;
+}
+.topper-rank {
+  position: absolute;
+  top: 8px;
+  left: 8px;
+  font-size: 0.72rem;
+  font-weight: 700;
+  padding: 3px 8px;
+  border-radius: 20px;
+  background: rgba(255,255,255,0.92);
+  backdrop-filter: blur(4px);
+  box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+}
+.rank-1 { color: #b8860b; }
+.rank-2 { color: #7a7a7a; }
+.rank-3 { color: #a0522d; }
+.topper-info {
+  padding: 12px 10px 14px;
+}
+.topper-info h3 {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--ink);
+  margin: 0 0 4px;
+}
+.topper-class {
+  display: block;
+  font-size: 0.78rem;
+  color: var(--muted);
+  margin-bottom: 6px;
+}
+.topper-pct {
+  display: inline-block;
+  background: var(--blue);
+  color: var(--white);
+  font-size: 0.78rem;
+  font-weight: 700;
+  padding: 2px 10px;
+  border-radius: 20px;
+}
+
 /* ── CONTACT ─────────────────────────────────────────────────────── */
 .contact-wrap {
   display: grid;

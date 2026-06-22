@@ -117,6 +117,21 @@ if (slideshowEl) {
   startTimer();
 }
 
+/* ── TOPPER FILTERS ─────────────────────────────────────────────── */
+const tfBtns = document.querySelectorAll(".tf-btn");
+if (tfBtns.length) {
+  tfBtns.forEach(btn => {
+    btn.addEventListener("click", () => {
+      tfBtns.forEach(b => b.classList.remove("active"));
+      btn.classList.add("active");
+      const filter = btn.dataset.filter;
+      document.querySelectorAll(".topper-card").forEach(card => {
+        card.style.display = (filter === "all" || card.dataset.group === filter) ? "" : "none";
+      });
+    });
+  });
+}
+
 const enquiryForm = document.querySelector(".enquiry-form");
 
 if (enquiryForm) {
