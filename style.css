@@ -1456,4 +1456,10 @@ a { color: inherit; text-decoration: none; }
   .gallery-grid img:first-child, .page-gallery img:first-child { grid-column: span 1; grid-row: span 1; }
   .page-hero div { padding: 86px 16px 44px; }
   .page-title { padding: 66px 16px 0; }
+  /* Toppers mobile */
+  .toppers-section { padding: 48px 16px; }
+  .topper-filters { gap: 8px; }
+  .tf-btn { padding: 7px 14px; font-size: 0.82rem; }
+  .topper-grid { grid-template-columns: repeat(2, 1fr); gap: 12px; }
+  .toppers-header h2 { font-size: 1.6rem; }
 }
