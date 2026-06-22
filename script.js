@@ -117,6 +117,15 @@ if (slideshowEl) {
   startTimer();
 }
 
+/* ── MOVE TOPPERS AFTER HERO ────────────────────────────────────── */
+(function() {
+  const toppers = document.getElementById('toppers');
+  const hero = document.querySelector('.hero');
+  if (toppers && hero) {
+    hero.parentNode.insertBefore(toppers, hero.nextSibling);
+  }
+})();
+
 /* ── TOPPER FILTERS ─────────────────────────────────────────────── */
 const tfBtns = document.querySelectorAll(".tf-btn");
 if (tfBtns.length) {
