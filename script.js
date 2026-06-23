@@ -136,16 +136,9 @@ const enquiryForm = document.querySelector(".enquiry-form");
 
 if (enquiryForm) {
   enquiryForm.addEventListener("submit", (event) => {
-    event.preventDefault();
     const button = event.currentTarget.querySelector("button");
-    const originalText = button.textContent;
-    button.textContent = "Enquiry Sent";
+    button.textContent = "Sending…";
     button.disabled = true;
-
-    setTimeout(() => {
-      button.textContent = originalText;
-      button.disabled = false;
-      event.currentTarget.reset();
-    }, 1800);
+    // Formspree handles the actual POST; let the form submit naturally
   });
 }
