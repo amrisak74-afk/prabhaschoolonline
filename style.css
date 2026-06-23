@@ -748,7 +748,8 @@ a { color: inherit; text-decoration: none; }
 .admission-banner p { color: rgba(255,255,255,0.82); max-width: 600px; }
 
 /* ── TOPPERS ─────────────────────────────────────────────────────── */
-.toppers-section {
+.toppers-section { display: none; }
+.toppers-section-off {
   padding: 80px 40px;
   max-width: 1440px;
   margin: 0 auto;
